@@ -66,7 +66,7 @@ function NavBar() {
       <Container>
         <div className="flex items-center justify-between py-3">
           <NavLink to="/" className="flex items-center gap-3">
-            <img src={USER_LOGO_URL} alt="SLFRP Logo" className="h-10 w-10 rounded-xl" />
+            <img src={USER_LOGO_URL} alt="SLFRP Logo" className="h-10 w-10 rou  nded-xl" />
             <div className="text-blue-800 font-black leading-tight">
               <div>Serving London Frontline Roleplay</div>
               <div className="text-xs text-blue-600 font-roboto">
@@ -336,7 +336,7 @@ const Police = () => (
     title="Metropolitan Police Service"
     img="https://i.imgur.com/7UJ9HLP.jpeg"
     overlay="bg-blue-900/70"
-    desc="Upholding law and order across London with dedication and integrity."
+    desc="Policing and keeping London safe."
   />
 );
 
