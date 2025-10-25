@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Poppins:wght@400;600;800&family=Roboto:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-\[BBH\ Sans\ Bartle\] {
+  font-family: 'BBH Sans Bartle', sans-serif;
+}
