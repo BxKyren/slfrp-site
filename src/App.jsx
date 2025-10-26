@@ -12,7 +12,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import FadeIn from "./FadeIn.jsx";
 
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
-const USER_LOGO_URL = "https://i.imgur.com/gjZ7VUB.png";
+const USER_LOGO_URL = "https://live.staticflickr.com/65535/54880837856_ef8d307de8_m.jpg";
 const USER_BANNER_URL = "https://i.imgur.com/Z4ZCxn8.png";
 
 const Container = ({ children }) => (
@@ -240,25 +240,25 @@ function Services() {
   const services = [
     {
       title: "Metropolitan Police Service",
-      desc: "Traffic, firearms, and CID units with realistic progression.",
+      desc: "Tackling crime across London. Serving Communities.",
       img: "https://i.imgur.com/7UJ9HLP.jpeg",
       link: "/services/police",
     },
     {
       title: "London Ambulance Service",
-      desc: "Paramedic, HART, and air ambulance operations.",
+      desc: "Racing against time. Saving lives across London",
       img: "https://i.imgur.com/ceyHc6e.jpeg",
       link: "/services/ambulance",
     },
     {
       title: "London Fire Brigade",
-      desc: "Technical rescue, fire suppression, and command structure.",
+      desc: "Putting out fires, saving lives..",
       img: "https://i.imgur.com/6MJ6k8E.jpeg",
       link: "/services/fire",
     },
     {
       title: "Civilian Operations",
-      desc: "Businesses, media, and open-world storytelling opportunities.",
+      desc: "Start a life as a good civilian, or a road of crime. There are an endless ammount of choices.",
       img: "https://i.imgur.com/ZpSyNnO.jpeg",
       link: "/services/civilian",
     },
