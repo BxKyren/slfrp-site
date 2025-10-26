@@ -12,7 +12,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import FadeIn from "./FadeIn.jsx";
 
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
-const USER_LOGO_URL = "https://live.staticflickr.com/65535/54880837856_ef8d307de8_m.jpg";
+const USER_LOGO_URL = "https://live.staticflickr.com/65535/54880864576_f820d278b3_m.jpg";
 const USER_BANNER_URL = "https://i.imgur.com/Z4ZCxn8.png";
 
 const Container = ({ children }) => (
