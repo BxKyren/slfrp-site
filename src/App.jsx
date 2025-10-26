@@ -13,7 +13,7 @@ import FadeIn from "./FadeIn.jsx";
 
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
 const USER_LOGO_URL = "https://live.staticflickr.com/65535/54880864576_f820d278b3_m.jpg";
-const USER_BANNER_URL = "https://i.imgur.com/Z4ZCxn8.png";
+const USER_BANNER_URL = "https://live.staticflickr.com/65535/54880830406_9d3a5e2065_b.jpg";
 
 const Container = ({ children }) => (
   <div className="mx-auto max-w-7xl px-4 font-roboto">{children}</div>
@@ -247,7 +247,7 @@ function Services() {
     {
       title: "London Ambulance Service",
       desc: "Racing against time. Saving lives across London",
-      img: "https://i.imgur.com/ceyHc6e.jpeg",
+      img: "https://live.staticflickr.com/65535/54881118758_2120817bac_b.jpg",
       link: "/services/ambulance",
     },
     {
