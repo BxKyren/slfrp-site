@@ -38,7 +38,7 @@ export const teamData = {
 
   AdministrationTeam: [
     {
-      img: "https://i.pravatar.cc/200?img=17",
+      img: "https://live.staticflickr.com/65535/54883736877_dfcf4d54c7_b.jpg",
       name: "Jackal",
       desc: "Hey! I’m The Jackal, an admin at SLFRP. I’m here to help the community with anything they need.",
     },
@@ -48,7 +48,7 @@ export const teamData = {
       desc: "",
     },
     {
-      img: "https://live.staticflickr.com/65535/54884593236_170cef9403_b.jpg",  
+      img: "",  
       name: "Jackal",
       desc: "Supports server management and helps with moderation tasks.",
     },
