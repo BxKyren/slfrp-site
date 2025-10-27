@@ -43,21 +43,21 @@ export const teamData = {
       desc: "Hey! I’m The Jackal, an admin at SLFRP. I’m here to help the community with anything they need.",
     },
     {
-      img: "https://live.staticflickr.com/65535/54884836839_e58c977879_w.jpg",
-      name: "Noah",
+      img: "",
+      name: "New",
       desc: "",
     },
     {
       img: "",  
-      name: "Jackal",
+      name: "",
       desc: "Supports server management and helps with moderation tasks.",
     },
   ],
 
   ModerationTeam: [
     {
-      img: "https://i.pravatar.cc/200?img=23",
-      name: "Lucas",
+      img: "https://live.staticflickr.com/65535/54884836839_e58c977879_w.jpg",
+      name: "Noah",
       desc: "Moderator ensuring fair play and community standards.",
     },
     {
