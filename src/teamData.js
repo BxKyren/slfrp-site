@@ -43,9 +43,9 @@ export const teamData = {
       desc: "Hey! I’m The Jackal, an admin at SLFRP. I’m here to help the community with anything they need.",
     },
     {
-      img: "",
-      name: "New",
-      desc: "",
+      img: "https://live.staticflickr.com/65535/54884913619_7bd6057c78_m.jpg",
+      name: "Ky",
+      desc: "I am Ky. I like cats. Cool.",
     },
     {
       img: "",  
@@ -66,26 +66,26 @@ export const teamData = {
       desc: "Friendly mod helping new players learn the ropes.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=27",
-      name: "Mason",
+      img: "https://live.staticflickr.com/65535/54884593236_170cef9403_b.jpg",
+      name: "Roberts",
       desc: "Keeps roleplay sessions smooth and respectful for everyone.",
     },
   ],
 
   DevelopmentTeam: [
     {
-      img: "https://i.pravatar.cc/200?img=29",
-      name: "Henry",
+      img: "https://live.staticflickr.com/65535/54882468542_e77e522b7a_b.jpg",
+      name: "Jim",
       desc: "Developer working on FiveM scripts and performance improvements.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=31",
-      name: "Olivia",
+      img: "https://live.staticflickr.com/65535/54884972865_d863ff1816_b.jpg",
+      name: "Icypanic",
       desc: "Designer focusing on UI, community visuals, and in-game assets.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=33",
-      name: "George",
+      img: "https://live.staticflickr.com/65535/54884932204_dc6e3fa662_m.jpg",
+      name: "Donut",
       desc: "Maintains backend systems and server reliability.",
     },
   ],
