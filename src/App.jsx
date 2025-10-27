@@ -329,7 +329,7 @@ function ServiceLanding({ title, img, overlay, desc }) {
 const Police = () => (
   <ServiceLanding
     title="Metropolitan Police Service"
-    img="https://live.staticflickr.com/65535/54883403625_689db8f2b3_b.jpg"
+    img="https://i.imgur.com/7UJ9HLP.jpeg"
     overlay="bg-blue-900/70"
     desc="Policing and keeping London safe."
   />
@@ -338,7 +338,7 @@ const Police = () => (
 const Ambulance = () => (
   <ServiceLanding
     title="London Ambulance Service"
-    img="https://live.staticflickr.com/65535/54883361578_7f207f823b_b.jpg"
+    img="https://i.imgur.com/ceyHc6e.jpeg"
     overlay="bg-green-900/70"
     desc="Providing rapid medical response and life-saving care to the people of London."
   />
