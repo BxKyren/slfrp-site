@@ -9,7 +9,7 @@ export const teamData = {
     {
       img: "https://live.staticflickr.com/65535/54882468542_e77e522b7a_b.jpg",
       name: "Jim",
-      desc: "I am jim.",
+      desc: "I am Jim.",
     },
     {
       img: "http://live.staticflickr.com/65535/54884275228_3cede7efde_m.jpg",
@@ -27,13 +27,12 @@ export const teamData = {
     {
       img: "https://live.staticflickr.com/65535/54883245122_e8dda23cd4.jpg",
       name: "Brooklyn",
-      desc: "Hi I'm Brooklyn and i'm Welsh and from Wales.",
+      desc: "Hi I'm Brooklyn and I'm Welsh and from Wales.",
     },
     {
       img: "https://i.pravatar.cc/200?img=15",
       name: "Harrelson",
-      desc: "I'm an On-Call Firefighter, and a Crew Manager for Training and Development. I have been within FiveM for about 4 years now, and I'm hoping for Serving London Frontline Roleplay to exceed to its max
-",
+      desc: "I'm an On-Call Firefighter, and a Crew Manager for Training and Development. I have been within FiveM for about 4 years now, and I'm hoping for Serving London Frontline Roleplay to exceed to its max.",
     },
   ],
 
