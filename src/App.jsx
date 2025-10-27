@@ -347,13 +347,20 @@ const Ambulance = () => (
 const Fire = () => (
   <ServiceLanding
     title="London Fire Brigade"
-    img="https://live.staticflickr.com/65535/54883284429_1f7c199943_b.jpg"
+    img="https://i.imgur.com/6MJ6k8E.jpeg"
     overlay="bg-red-900/70"
     desc="Protecting lives, property, and the community through fire and rescue excellence."
   />
 );
 
-
+const Civilian = () => (
+  <ServiceLanding
+    title="Civilian Operations"
+    img="https://i.imgur.com/ZpSyNnO.jpeg"
+    overlay="bg-yellow-900/70"
+    desc="Shape your own story in London’s bustling civilian world — from businesses to media."
+  />
+);
 
 // --- Team Page ---
 function TeamBanner() {
