@@ -347,7 +347,7 @@ const Ambulance = () => (
 const Fire = () => (
   <ServiceLanding
     title="London Fire Brigade"
-    img="https://i.imgur.com/6MJ6k8E.jpeg"
+    img="https://live.staticflickr.com/65535/54883284429_1f7c199943_b.jpg"
     overlay="bg-red-900/70"
     desc="Protecting lives, property, and the community through fire and rescue excellence."
   />
