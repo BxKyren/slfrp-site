@@ -8,8 +8,8 @@ export const teamData = {
     },
     {
       img: "https://i.pravatar.cc/200?img=7",
-      name: "Liam",
-      desc: "Owner & Lead Developer — passionate about realism and user experience.",
+      name: "Jim",
+      desc: "I am jim.",
     },
     {
       img: "https://i.pravatar.cc/200?img=9",
