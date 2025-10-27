@@ -446,7 +446,7 @@ function News() {
         <Container>
           <h1 className="text-4xl font-bold mb-4 font-poppins">News</h1>
           <p className="text-blue-700 font-roboto">
-            Latest community updates coming soon.
+            Community Updates can be found here!
           </p>
         </Container>
       </section>
