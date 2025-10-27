@@ -10,16 +10,26 @@ import {
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import FadeIn from "./FadeIn.jsx";
+import { teamData } from "./teamData.js"; // <-- NEW IMPORT
 
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
-const USER_LOGO_URL = "https://live.staticflickr.com/65535/54880864576_f820d278b3_m.jpg";
-const USER_BANNER_URL = "https://live.staticflickr.com/65535/54880830406_9d3a5e2065_b.jpg";
+const USER_LOGO_URL =
+  "https://live.staticflickr.com/65535/54880864576_f820d278b3_m.jpg";
+const USER_BANNER_URL =
+  "https://live.staticflickr.com/65535/54880830406_9d3a5e2065_b.jpg";
 
 const Container = ({ children }) => (
   <div className="mx-auto max-w-7xl px-4 font-roboto">{children}</div>
 );
 
-const Button = ({ as: Tag = "a", href, children, className = "", onClick, to }) => (
+const Button = ({
+  as: Tag = "a",
+  href,
+  children,
+  className = "",
+  onClick,
+  to,
+}) => (
   <Tag
     href={href}
     to={to}
@@ -66,7 +76,11 @@ function NavBar() {
       <Container>
         <div className="flex items-center justify-between py-3">
           <NavLink to="/" className="flex items-center gap-3">
-            <img src={USER_LOGO_URL} alt="SLFRP Logo" className="h-10 w-10 rou  nded-xl" />
+            <img
+              src={USER_LOGO_URL}
+              alt="SLFRP Logo"
+              className="h-10 w-10 rounded-xl"
+            />
             <div className="text-blue-800 font-black leading-tight">
               <div>Serving London Frontline Roleplay</div>
               <div className="text-xs text-blue-600 font-roboto">
@@ -214,12 +228,13 @@ function Home() {
             transition={{ duration: 1.0, ease: "easeOut" }}
           >
             <h1 className="text-5xl font-extrabold mb-4 tracking-tight leading-tight font-[BBH Sans Bartle] text-white">
-              Serving London <span className="text-blue-400">Frontline Roleplay</span>
+              Serving London{" "}
+              <span className="text-blue-400">Frontline Roleplay</span>
             </h1>
             <p className="font-roboto text-lg text-blue-100 leading-relaxed mb-6">
               Join our realistic FiveM community inspired by London emergency
-              services. Immerse yourself in policing, medical, fire, and civilian
-              operations — build your own story.
+              services. Immerse yourself in policing, medical, fire, and
+              civilian operations — build your own story.
             </p>
             <div className="flex gap-3">
               <Button
@@ -235,6 +250,7 @@ function Home() {
     </PageWrapper>
   );
 }
+
 // --- Services ---
 function Services() {
   const services = [
@@ -252,11 +268,10 @@ function Services() {
     },
     {
       title: "London Fire Brigade",
-      desc: "Putting out fires, saving lives..",
+      desc: "Putting out fires, saving lives.",
       img: "https://live.staticflickr.com/65535/54882169677_b2ee358218_b.jpg",
       link: "/services/fire",
     },
-    
   ];
 
   return (
@@ -275,7 +290,8 @@ function Services() {
       <main className="py-16 bg-blue-50/30 text-blue-900">
         <Container>
           <p className="text-center font-roboto text-blue-700 mb-10 text-lg">
-            Explore the divisions that make Serving London Frontline Roleplay unique.
+            Explore the divisions that make Serving London Frontline Roleplay
+            unique.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -292,7 +308,9 @@ function Services() {
                       <h2 className="font-poppins text-lg font-semibold mb-1">
                         {s.title}
                       </h2>
-                      <p className="font-roboto text-sm text-blue-800">{s.desc}</p>
+                      <p className="font-roboto text-sm text-blue-800">
+                        {s.desc}
+                      </p>
                     </div>
                   </GlassCard>
                 </Link>
@@ -402,36 +420,18 @@ function TeamSection({ title, members }) {
 }
 
 function Team() {
-  const faces = [
-    "https://live.staticflickr.com/65535/54882315197_5221b946a8.jpg",
-    "https://i.pravatar.cc/200?img=5",
-    "https://i.pravatar.cc/200?img=7",
-    "https://i.pravatar.cc/200?img=11",
-    "https://i.pravatar.cc/200?img=13",
-    "https://i.pravatar.cc/200?img=15",
-    "https://i.pravatar.cc/200?img=17",
-    "https://i.pravatar.cc/200?img=19",
-    "https://i.pravatar.cc/200?img=21",
-    "https://i.pravatar.cc/200?img=23",
-  ];
-
-  const mk = (n, offset = 0) =>
-    Array.from({ length: n }).map((_, i) => ({
-      img: faces[(i + offset) % faces.length],
-      name: "Benj",
-      desc: "Hey, Im Benj! I am one of the owners here!",
-    }));
-
   return (
     <PageWrapper>
       <TeamBanner />
       <main className="py-14 bg-white text-blue-900">
         <Container>
-          <TeamSection title="Ownership Team" members={mk(3, 0)} />
-          <TeamSection title="Management Team" members={mk(3, 3)} />
-          <TeamSection title="Administration Team" members={mk(3, 6)} />
-          <TeamSection title="Moderation Team" members={mk(3, 9)} />
-          <TeamSection title="Development Team" members={mk(3, 2)} />
+          {Object.entries(teamData).map(([title, members]) => (
+            <TeamSection
+              key={title}
+              title={title.replace(/([A-Z])/g, " $1").trim()}
+              members={members}
+            />
+          ))}
         </Container>
       </main>
     </PageWrapper>
@@ -462,7 +462,8 @@ function About() {
         <Container>
           <h1 className="text-4xl font-bold mb-4 font-poppins">About SLFRP</h1>
           <p className="text-blue-700 font-roboto">
-            A serious, immersive FiveM community inspired by London’s emergency services.
+            A serious, immersive FiveM community inspired by London’s emergency
+            services.
           </p>
         </Container>
       </section>
