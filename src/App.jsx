@@ -403,7 +403,7 @@ function TeamSection({ title, members }) {
 
 function Team() {
   const faces = [
-    "https://i.pravatar.cc/200?img=3",
+    "https://live.staticflickr.com/65535/54883361578_7f207f823b_b.jpg",
     "https://i.pravatar.cc/200?img=5",
     "https://i.pravatar.cc/200?img=7",
     "https://i.pravatar.cc/200?img=11",
