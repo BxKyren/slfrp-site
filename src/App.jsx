@@ -329,7 +329,7 @@ function ServiceLanding({ title, img, overlay, desc }) {
 const Police = () => (
   <ServiceLanding
     title="Metropolitan Police Service"
-    img="https://i.imgur.com/7UJ9HLP.jpeg"
+    img="https://live.staticflickr.com/65535/54883403625_689db8f2b3_b.jpg"
     overlay="bg-blue-900/70"
     desc="Policing and keeping London safe."
   />
