@@ -25,7 +25,7 @@ export default function Police() {
           and high-quality training environments inspired by the real Metropolitan Police.
         </p>
         <motion.img
-          src="https://i.imgur.com/7UJ9HLP.jpeg"
+          src="https://live.staticflickr.com/65535/54883403625_689db8f2b3_b.jpg"
           alt="Metropolitan Police Service"
           className="rounded-2xl shadow-md w-full max-w-3xl mx-auto"
           initial={{ opacity: 0 }}
