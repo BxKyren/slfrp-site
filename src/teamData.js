@@ -1,10 +1,10 @@
 // src/teamData.js
 export const teamData = {
-  ownershipTeam: [
+  OwnershipTeam: [
     {
       img: "https://live.staticflickr.com/65535/54882315197_5221b946a8.jpg",
       name: "Benj",
-      desc: "Hey, I'm Benj! I'm one of the owners and oversee community operations.",
+      desc: "Hey, I’m Benj one of the Owners here at SLFRP. Catch me policing the streets and serving the public around London",
     },
     {
       img: "https://live.staticflickr.com/65535/54882468542_e77e522b7a_b.jpg",
@@ -12,13 +12,13 @@ export const teamData = {
       desc: "I am jim.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=9",
-      name: "Harvey",
-      desc: "Co-owner and head of administration. Keeping SLFRP organised and fair.",
+      img: "http://live.staticflickr.com/65535/54884275228_3cede7efde_m.jpg",
+      name: "Kels",
+      desc: "Co-owner and the Designate Safeguarding Lead. Keeping SLFRP safe and protected.",
     },
   ],
 
-  managementTeam: [
+  ManagementTeam: [
     {
       img: "https://i.pravatar.cc/200?img=11",
       name: "Ethan",
@@ -36,7 +36,7 @@ export const teamData = {
     },
   ],
 
-  administrationTeam: [
+  AdministrationTeam: [
     {
       img: "https://i.pravatar.cc/200?img=17",
       name: "Ella",
@@ -54,7 +54,7 @@ export const teamData = {
     },
   ],
 
-  moderationTeam: [
+  ModerationTeam: [
     {
       img: "https://i.pravatar.cc/200?img=23",
       name: "Lucas",
@@ -72,7 +72,7 @@ export const teamData = {
     },
   ],
 
-  developmentTeam: [
+  DevelopmentTeam: [
     {
       img: "https://i.pravatar.cc/200?img=29",
       name: "Henry",
