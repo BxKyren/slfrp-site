@@ -20,9 +20,9 @@ export const teamData = {
 
   ManagementTeam: [
     {
-      img: "https://i.pravatar.cc/200?img=11",
-      name: "Ethan",
-      desc: "Manages team logistics and ensures smooth operations across departments.",
+      img: "https://live.staticflickr.com/65535/54883287572_77e65cdbb5_m.jpg",
+      name: "Paradox",
+      desc: "I like pigeons.",
     },
     {
       img: "https://live.staticflickr.com/65535/54883245122_e8dda23cd4.jpg",
@@ -31,8 +31,9 @@ export const teamData = {
     },
     {
       img: "https://i.pravatar.cc/200?img=15",
-      name: "Jack",
-      desc: "Supervises staff performance and helps new members settle in.",
+      name: "Harrelson",
+      desc: "I'm an On-Call Firefighter, and a Crew Manager for Training and Development. I have been within FiveM for about 4 years now, and I'm hoping for Serving London Frontline Roleplay to exceed to its max
+",
     },
   ],
 
