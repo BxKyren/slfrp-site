@@ -39,17 +39,17 @@ export const teamData = {
   AdministrationTeam: [
     {
       img: "https://i.pravatar.cc/200?img=17",
-      name: "Ella",
-      desc: "Administrator — keeping the Discord and forums running smoothly.",
+      name: "Jackal",
+      desc: "Hey! I’m The Jackal, an admin at SLFRP. I’m here to help the community with anything they need.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=19",
+      img: "https://live.staticflickr.com/65535/54884836839_e58c977879_w.jpg",
       name: "Noah",
-      desc: "Ensures rule compliance and handles community reports.",
+      desc: "",
     },
     {
-      img: "https://i.pravatar.cc/200?img=21",
-      name: "Chloe",
+      img: "https://live.staticflickr.com/65535/54884593236_170cef9403_b.jpg",  
+      name: "Jackal",
       desc: "Supports server management and helps with moderation tasks.",
     },
   ],
@@ -61,8 +61,8 @@ export const teamData = {
       desc: "Moderator ensuring fair play and community standards.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=25",
-      name: "Sophia",
+      img: "https://live.staticflickr.com/65535/54884878775_0b7058fb33_z.jpg",
+      name: "Sheenan",
       desc: "Friendly mod helping new players learn the ropes.",
     },
     {
