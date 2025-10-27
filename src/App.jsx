@@ -256,12 +256,7 @@ function Services() {
       img: "https://live.staticflickr.com/65535/54882169677_b2ee358218_b.jpg",
       link: "/services/fire",
     },
-    {
-      title: "Civilian Operations",
-      desc: "Start a life as a good civilian, or a road of crime. There are an endless ammount of choices.",
-      img: "https://i.imgur.com/ZpSyNnO.jpeg",
-      link: "/services/civilian",
-    },
+    
   ];
 
   return (
