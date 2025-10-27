@@ -403,7 +403,7 @@ function TeamSection({ title, members }) {
 
 function Team() {
   const faces = [
-    "https://live.staticflickr.com/65535/54883361578_7f207f823b_b.jpg",
+    "https://live.staticflickr.com/65535/54882315197_5221b946a8.jpg",
     "https://i.pravatar.cc/200?img=5",
     "https://i.pravatar.cc/200?img=7",
     "https://i.pravatar.cc/200?img=11",
@@ -418,8 +418,8 @@ function Team() {
   const mk = (n, offset = 0) =>
     Array.from({ length: n }).map((_, i) => ({
       img: faces[(i + offset) % faces.length],
-      name: "Name",
-      desc: "Short description here...",
+      name: "Benj",
+      desc: "Hey, Im Benj! I am one of the owners here!",
     }));
 
   return (
