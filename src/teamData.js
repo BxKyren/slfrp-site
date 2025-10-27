@@ -30,7 +30,7 @@ export const teamData = {
       desc: "Hi I'm Brooklyn and I'm Welsh and from Wales.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=15",
+      img: "https://live.staticflickr.com/65535/54884767043_f6085f101b_b.jpg",
       name: "Harrelson",
       desc: "I'm an On-Call Firefighter, and a Crew Manager for Training and Development. I have been within FiveM for about 4 years now, and I'm hoping for Serving London Frontline Roleplay to exceed to its max.",
     },
