@@ -25,9 +25,9 @@ export const teamData = {
       desc: "Manages team logistics and ensures smooth operations across departments.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=13",
-      name: "Ava",
-      desc: "Coordinates recruitment and community events for all players.",
+      img: "https://live.staticflickr.com/65535/54883245122_e8dda23cd4.jpg",
+      name: "Brooklyn",
+      desc: "Hi I'm Brooklyn and i'm Welsh and from Wales.",
     },
     {
       img: "https://i.pravatar.cc/200?img=15",
