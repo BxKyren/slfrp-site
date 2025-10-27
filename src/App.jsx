@@ -338,7 +338,7 @@ const Police = () => (
 const Ambulance = () => (
   <ServiceLanding
     title="London Ambulance Service"
-    img="https://i.imgur.com/ceyHc6e.jpeg"
+    img="https://live.staticflickr.com/65535/54883361578_7f207f823b_b.jpg"
     overlay="bg-green-900/70"
     desc="Providing rapid medical response and life-saving care to the people of London."
   />
@@ -353,14 +353,7 @@ const Fire = () => (
   />
 );
 
-const Civilian = () => (
-  <ServiceLanding
-    title="Civilian Operations"
-    img="https://i.imgur.com/ZpSyNnO.jpeg"
-    overlay="bg-yellow-900/70"
-    desc="Shape your own story in London’s bustling civilian world — from businesses to media."
-  />
-);
+
 
 // --- Team Page ---
 function TeamBanner() {
