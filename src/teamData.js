@@ -2,12 +2,12 @@
 export const teamData = {
   ownershipTeam: [
     {
-      img: "https://i.pravatar.cc/200?img=5",
+      img: "https://live.staticflickr.com/65535/54882315197_5221b946a8.jpg",
       name: "Benj",
       desc: "Hey, I'm Benj! I'm one of the owners and oversee community operations.",
     },
     {
-      img: "https://i.pravatar.cc/200?img=7",
+      img: "https://live.staticflickr.com/65535/54882468542_e77e522b7a_b.jpg",
       name: "Jim",
       desc: "I am jim.",
     },
