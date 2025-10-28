@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { GlassCard } from "../App.jsx";
 
 export default function AmbulanceDivisions() {
@@ -35,31 +36,46 @@ export default function AmbulanceDivisions() {
     },
   ];
 
-  return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-green-900 mb-10">
-          London Ambulance Divisions
-        </h2>
+  console.log("💚 AmbulanceDivisions component loaded");
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {divisions.map((div) => (
-            <GlassCard
+  return (
+    <section className="py-20 bg-gradient-to-b from-white to-green-50 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center text-green-900 mb-12 font-[BBH Sans Bartle]"
+        >
+          London Ambulance Service Divisions
+        </motion.h2>
+
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {divisions.map((div, index) => (
+            <motion.div
               key={div.name}
-              className="hover:shadow-lg transition transform hover:-translate-y-1"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
             >
-              <img
-                src={div.img}
-                alt={div.name}
-                className="w-full h-32 object-cover rounded-t-2xl"
-              />
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-green-900 mb-2">
-                  {div.name}
-                </h3>
-                <p className="text-green-700 text-sm">{div.desc}</p>
-              </div>
-            </GlassCard>
+              <GlassCard className="hover:shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                <img
+                  src={div.img}
+                  alt={div.name}
+                  className="w-full h-36 object-cover rounded-t-2xl"
+                />
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold text-green-900 mb-2 font-poppins">
+                    {div.name}
+                  </h3>
+                  <p className="text-green-700 text-sm leading-relaxed font-roboto">
+                    {div.desc}
+                  </p>
+                </div>
+              </GlassCard>
+            </motion.div>
           ))}
         </div>
       </div>
