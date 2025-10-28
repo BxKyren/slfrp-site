@@ -1,41 +1,36 @@
 import React from "react";
+import { GlassCard } from "../App.jsx"; // ✅ reuse your global glass card style
 
 export default function DivisionsSection() {
   const divisions = [
     {
       name: "Traffic Division",
-      href: "/divisions/traffic",
       desc: "Enforcing road safety and responding to incidents across London.",
       img: "/images/traffic.jpg",
     },
     {
       name: "Criminal Investigation Division (CID)",
-      href: "/divisions/cid",
       desc: "Handling serious crime investigations and detective operations.",
       img: "/images/cid.jpg",
     },
     {
       name: "Dog Support Unit",
-      href: "/divisions/dog-unit",
-      desc: "Providing specialist support with trained police dogs for patrol and search.",
+      desc: "Supporting patrols and searches with highly trained police dogs.",
       img: "/images/dogunit.jpg",
     },
     {
       name: "Armed Response Unit (ARU)",
-      href: "/divisions/armed-response",
       desc: "Responding to incidents involving firearms and critical threats.",
       img: "/images/armed.jpg",
     },
     {
       name: "Forensics Division",
-      href: "/divisions/forensics",
-      desc: "Examining evidence and supporting investigations through scientific analysis.",
+      desc: "Collecting and analysing evidence to support investigations.",
       img: "/images/forensics.jpg",
     },
     {
       name: "Community Policing",
-      href: "/divisions/community",
-      desc: "Building relationships with the public and promoting local safety.",
+      desc: "Building trust and relationships with local communities.",
       img: "/images/community.jpg",
     },
   ];
@@ -43,29 +38,28 @@ export default function DivisionsSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-10">
-          Divisions of the Metropolitan Police Service
+        <h2 className="text-4xl font-bold text-center text-blue-900 mb-10">
+          Metropolitan Police Divisions
         </h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {divisions.map((div) => (
-            <a
+            <GlassCard
               key={div.name}
-              href={div.href}
-              className="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1"
+              className="hover:shadow-lg transition transform hover:-translate-y-1"
             >
               <img
                 src={div.img}
                 alt={div.name}
-                className="w-full h-48 object-cover"
+                className="w-full h-32 object-cover rounded-t-2xl"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 group-hover:text-blue-700">
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-blue-900 mb-2">
                   {div.name}
                 </h3>
-                <p className="text-gray-600">{div.desc}</p>
+                <p className="text-blue-700 text-sm">{div.desc}</p>
               </div>
-            </a>
+            </GlassCard>
           ))}
         </div>
       </div>

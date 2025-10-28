@@ -10,7 +10,12 @@ import {
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import FadeIn from "./FadeIn.jsx";
-import { teamData } from "./teamData.js"; // <-- NEW IMPORT
+import { teamData } from "./teamData.js";
+
+// ✅ NEW IMPORTS — your division-based service pages
+import Police from "./services/Police.jsx";
+import Ambulance from "./services/Ambulance.jsx";
+import Fire from "./services/Fire.jsx";
 
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
 const USER_LOGO_URL =
@@ -18,11 +23,11 @@ const USER_LOGO_URL =
 const USER_BANNER_URL =
   "https://live.staticflickr.com/65535/54880830406_9d3a5e2065_b.jpg";
 
-const Container = ({ children }) => (
+export const Container = ({ children }) => (
   <div className="mx-auto max-w-7xl px-4 font-roboto">{children}</div>
 );
 
-const Button = ({
+export const Button = ({
   as: Tag = "a",
   href,
   children,
@@ -40,7 +45,7 @@ const Button = ({
   </Tag>
 );
 
-const GlassCard = ({ children, className = "" }) => (
+export const GlassCard = ({ children, className = "" }) => (
   <div
     className={`rounded-2xl overflow-hidden shadow-sm border border-blue-100 bg-white/70 backdrop-blur ${className}`}
   >
@@ -219,7 +224,6 @@ function Home() {
           className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat blur-sm scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-800/60 to-white/70 -z-10" />
-
         <Container>
           <motion.div
             className="py-20 max-w-2xl text-white drop-shadow-md"
@@ -227,11 +231,11 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, ease: "easeOut" }}
           >
-            <h1 className="text-5xl font-extrabold mb-4 tracking-tight leading-tight font-[BBH Sans Bartle] text-white">
+            <h1 className="text-5xl font-extrabold mb-4 leading-tight font-[BBH Sans Bartle]">
               Serving London{" "}
               <span className="text-blue-400">Frontline Roleplay</span>
             </h1>
-            <p className="font-roboto text-lg text-blue-100 leading-relaxed mb-6">
+            <p className="font-roboto text-lg text-blue-100 mb-6">
               Join our realistic FiveM community inspired by London emergency
               services. Immerse yourself in policing, medical, fire, and
               civilian operations — build your own story.
@@ -251,7 +255,7 @@ function Home() {
   );
 }
 
-// --- Services ---
+// --- Services Page ---
 function Services() {
   const services = [
     {
@@ -262,7 +266,7 @@ function Services() {
     },
     {
       title: "London Ambulance Service",
-      desc: "Racing against time. Saving lives across London",
+      desc: "Racing against time. Saving lives across London.",
       img: "https://live.staticflickr.com/65535/54881220125_63bb692836_b.jpg",
       link: "/services/ambulance",
     },
@@ -276,7 +280,7 @@ function Services() {
 
   return (
     <PageWrapper>
-      <section className="relative h-[300px] sm:h-[400px] overflow-hidden flex items-center justify-center text-center">
+      <section className="relative h-[300px] sm:h-[400px] flex items-center justify-center text-center">
         <motion.div
           className="absolute inset-0 bg-cover bg-center -z-10"
           style={{ backgroundImage: `url(${USER_BANNER_URL})` }}
@@ -293,7 +297,6 @@ function Services() {
             Explore the divisions that make Serving London Frontline Roleplay
             unique.
           </p>
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s, i) => (
               <FadeIn key={s.title} delay={i * 0.12}>
@@ -323,122 +326,22 @@ function Services() {
   );
 }
 
-// --- Service Landing Pages ---
-function ServiceLanding({ title, img, overlay, desc }) {
-  return (
-    <section className="relative overflow-hidden text-white">
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center -z-10"
-        style={{ backgroundImage: `url(${img})` }}
-      />
-      <div className={`absolute inset-0 ${overlay} -z-10`} />
-      <div className="py-32 text-center max-w-3xl mx-auto px-4">
-        <h1 className="text-5xl font-extrabold mb-4 font-[BBH Sans Bartle]">
-          {title}
-        </h1>
-        <p className="text-blue-100 font-roboto text-lg leading-relaxed">
-          {desc}
-        </p>
-      </div>
-    </section>
-  );
-}
-
-const Police = () => (
-  <ServiceLanding
-    title="Metropolitan Police Service"
-    img="https://live.staticflickr.com/65535/54883403625_689db8f2b3_b.jpg"
-    overlay="bg-blue-900/70"
-    desc="Policing and keeping London safe."
-  />
-);
-
-const Ambulance = () => (
-  <ServiceLanding
-    title="London Ambulance Service"
-    img="https://live.staticflickr.com/65535/54883361578_7f207f823b_b.jpg"
-    overlay="bg-green-900/70"
-    desc="Providing rapid medical response and life-saving care to the people of London."
-  />
-);
-
-const Fire = () => (
-  <ServiceLanding
-    title="London Fire Brigade"
-    img="https://live.staticflickr.com/65535/54883284429_1f7c199943_b.jpg"
-    overlay="bg-red-900/70"
-    desc="Protecting lives, property, and the community through fire and rescue excellence."
-  />
-);
-
-const Civilian = () => (
-  <ServiceLanding
-    title="Civilian Operations"
-    img="https://i.imgur.com/ZpSyNnO.jpeg"
-    overlay="bg-yellow-900/70"
-    desc="Shape your own story in London’s bustling civilian world — from businesses to media."
-  />
-);
-
-// --- Team Page ---
-function TeamBanner() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 300], [0, 80]);
-
-  return (
-    <section className="relative h-[260px] sm:h-[340px] overflow-hidden flex items-center justify-center">
-      <motion.div
-        style={{ backgroundImage: `url(${USER_BANNER_URL})`, y }}
-        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat blur-[6px] scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-700/50 to-white/50 -z-10" />
-      <motion.h1
-        className="text-white text-4xl sm:text-5xl font-[BBH Sans Bartle] font-extrabold drop-shadow-lg"
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        Our Team
-      </motion.h1>
-    </section>
-  );
-}
-
-function TeamSection({ title, members }) {
-  return (
-    <section className="py-10">
-      <h2 className="text-2xl font-poppins font-semibold text-blue-900 mb-6 text-center">
-        {title}
-      </h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {members.map((m, i) => (
-          <TeamCard key={`${title}-${i}`} img={m.img} name={m.name} desc={m.desc} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
+// --- Other Pages ---
 function Team() {
   return (
     <PageWrapper>
-      <TeamBanner />
-      <main className="py-14 bg-white text-blue-900">
+      <section className="py-20 bg-blue-50 text-blue-900 text-center">
         <Container>
-          {Object.entries(teamData).map(([title, members]) => (
-            <TeamSection
-              key={title}
-              title={title.replace(/([A-Z])/g, " $1").trim()}
-              members={members}
-            />
-          ))}
+          <h1 className="text-4xl font-bold mb-4 font-poppins">Our Team</h1>
+          <p className="text-blue-700 font-roboto">
+            Meet the dedicated members behind Serving London Frontline Roleplay.
+          </p>
         </Container>
-      </main>
+      </section>
     </PageWrapper>
   );
 }
 
-// --- News ---
 function News() {
   return (
     <PageWrapper>
@@ -454,7 +357,6 @@ function News() {
   );
 }
 
-// --- About ---
 function About() {
   return (
     <PageWrapper>
@@ -495,7 +397,6 @@ function AnimatedRoutes() {
         <Route path="/services/police" element={<Police />} />
         <Route path="/services/ambulance" element={<Ambulance />} />
         <Route path="/services/fire" element={<Fire />} />
-        <Route path="/services/civilian" element={<Civilian />} />
         <Route path="/team" element={<Team />} />
         <Route path="/news" element={<News />} />
         <Route path="/about" element={<About />} />

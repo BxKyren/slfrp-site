@@ -1,68 +1,68 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { Container } from "../App.jsx";
-import DivisionsSection from "./DivisionsSection"; // ✅ import the new component
+import { GlassCard } from "../App.jsx";
 
-export default function Police() {
+export default function DivisionsSection() {
+  const divisions = [
+    {
+      name: "Traffic Division",
+      desc: "Enforcing road safety and responding to incidents across London.",
+      img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Metropolitan_Police_Traffic_Car.jpg",
+    },
+    {
+      name: "Criminal Investigation Division (CID)",
+      desc: "Handling serious crime investigations and detective operations.",
+      img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Detectives_in_London.jpg",
+    },
+    {
+      name: "Dog Support Unit",
+      desc: "Supporting patrols and searches with highly trained police dogs.",
+      img: "https://upload.wikimedia.org/wikipedia/commons/8/88/Met_Police_Dog_Unit.jpg",
+    },
+    {
+      name: "Armed Response Unit (ARU)",
+      desc: "Responding to incidents involving firearms and critical threats.",
+      img: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Armed_Response_Vehicle_MET.jpg",
+    },
+    {
+      name: "Forensics Division",
+      desc: "Collecting and analysing evidence to support investigations.",
+      img: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Forensic_investigation_Metropolitan_Police.jpg",
+    },
+    {
+      name: "Community Policing",
+      desc: "Building trust and relationships with local communities.",
+      img: "https://upload.wikimedia.org/wikipedia/commons/9/94/Metropolitan_Police_Community_Support_Officers.jpg",
+    },
+  ];
+
   return (
-    <motion.main
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -40 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="bg-blue-50/40 text-blue-900 min-h-screen"
-    >
-      <Container>
-        {/* Back Button */}
-        <Link
-          to="/services"
-          className="inline-flex items-center gap-2 text-blue-700 hover:underline mt-10 mb-6"
-        >
-          <ArrowLeft size={18} /> Back to Services
-        </Link>
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center text-blue-900 mb-10">
+          Metropolitan Police Divisions
+        </h2>
 
-        {/* Hero Section */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl font-poppins font-bold mb-4">
-            Metropolitan Police Service
-          </h1>
-          <p className="font-roboto text-lg text-blue-800 max-w-3xl mx-auto mb-8">
-            The Metropolitan Police Service (MPS) is responsible for keeping
-            London’s streets safe. Join units like{" "}
-            <strong>
-              Roads Traffic Policing Command, Specialist Firearms Command, CID,
-              and Response
-            </strong>{" "}
-            — experience realistic policing, teamwork, and high-quality training
-            environments inspired by the real Metropolitan Police.
-          </p>
-
-          <motion.img
-            src="https://live.staticflickr.com/65535/54883403625_689db8f2b3_b.jpg"
-            alt="Metropolitan Police Service"
-            className="rounded-2xl shadow-md w-full max-w-3xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          />
-        </motion.section>
-      </Container>
-
-      {/* Divisions Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
-      >
-        <DivisionsSection />
-      </motion.section>
-    </motion.main>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {divisions.map((div) => (
+            <GlassCard
+              key={div.name}
+              className="hover:shadow-lg transition transform hover:-translate-y-1"
+            >
+              <img
+                src={div.img}
+                alt={div.name}
+                className="w-full h-32 object-cover rounded-t-2xl"
+              />
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-blue-900 mb-2">
+                  {div.name}
+                </h3>
+                <p className="text-blue-700 text-sm">{div.desc}</p>
+              </div>
+            </GlassCard>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
