@@ -5,32 +5,32 @@ export default function PoliceDivisions() {
   const divisions = [
     {
       name: "Roads and Transport Policing Command",
-      desc: "Enforcing road safety and responding to incidents across London’s road network.",
+      desc: "Enforcing road safety laws, investigating collisions, and keeping London’s roads secure.",
       img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Metropolitan_Police_Traffic_Car.jpg",
     },
     {
       name: "Criminal Investigation Department (CID)",
-      desc: "Investigating serious crimes, from robbery and assault to complex fraud and homicide cases.",
+      desc: "Handling serious crime investigations, from homicides to organized crime.",
       img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Detectives_in_London.jpg",
     },
     {
       name: "Dog Support Unit (DSU)",
-      desc: "Supporting patrols and searches with highly trained police dogs for detection and protection.",
+      desc: "Supporting operations with highly trained police dogs for searches, tracking, and public order.",
       img: "https://upload.wikimedia.org/wikipedia/commons/8/88/Met_Police_Dog_Unit.jpg",
     },
     {
       name: "Armed Response Unit (ARU)",
-      desc: "Providing tactical firearms support to deal with high-risk and armed incidents.",
+      desc: "Providing immediate tactical response to firearms incidents and major threats.",
       img: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Armed_Response_Vehicle_MET.jpg",
     },
     {
       name: "Forensic Services Command",
-      desc: "Collecting, preserving, and analysing evidence to assist criminal investigations.",
+      desc: "Collecting, analyzing, and interpreting evidence to support criminal investigations.",
       img: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Forensic_investigation_Metropolitan_Police.jpg",
     },
     {
       name: "Neighbourhood Policing Teams",
-      desc: "Building trust, reducing crime, and maintaining order within local London communities.",
+      desc: "Building community trust through local engagement, crime prevention, and visibility.",
       img: "https://upload.wikimedia.org/wikipedia/commons/9/94/Metropolitan_Police_Community_Support_Officers.jpg",
     },
   ];

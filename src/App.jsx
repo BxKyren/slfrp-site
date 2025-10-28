@@ -12,17 +12,19 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import FadeIn from "./FadeIn.jsx";
 import { teamData } from "./teamData.js";
 
-// ✅ NEW IMPORTS — your division-based service pages
+// ✅ Division-based service pages
 import Police from "./services/Police.jsx";
 import Ambulance from "./services/Ambulance.jsx";
 import Fire from "./services/Fire.jsx";
 
+// --- Constants ---
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
 const USER_LOGO_URL =
   "https://live.staticflickr.com/65535/54880864576_f820d278b3_m.jpg";
 const USER_BANNER_URL =
   "https://live.staticflickr.com/65535/54880830406_9d3a5e2065_b.jpg";
 
+// --- Shared Components ---
 export const Container = ({ children }) => (
   <div className="mx-auto max-w-7xl px-4 font-roboto">{children}</div>
 );
@@ -50,18 +52,6 @@ export const GlassCard = ({ children, className = "" }) => (
     className={`rounded-2xl overflow-hidden shadow-sm border border-blue-100 bg-white/70 backdrop-blur ${className}`}
   >
     {children}
-  </div>
-);
-
-const TeamCard = ({ img, name, desc }) => (
-  <div className="rounded-2xl overflow-hidden shadow-sm border border-blue-100 bg-white/80 p-5 text-center hover:shadow-md transition">
-    <img
-      src={img}
-      alt={name}
-      className="w-24 h-24 mx-auto rounded-full object-cover mb-3"
-    />
-    <h3 className="font-poppins font-semibold text-blue-900 text-lg">{name}</h3>
-    <p className="text-blue-700 text-sm mt-1">{desc}</p>
   </div>
 );
 
@@ -255,7 +245,7 @@ function Home() {
   );
 }
 
-// --- Services Page ---
+// --- Services ---
 function Services() {
   const services = [
     {
@@ -326,7 +316,7 @@ function Services() {
   );
 }
 
-// --- Other Pages ---
+// --- Basic Pages ---
 function Team() {
   return (
     <PageWrapper>
