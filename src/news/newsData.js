@@ -1,13 +1,12 @@
-// src/news/newsData.js
 export const newsData = [
   {
-    id: 1,
-    title: "Met Police Launch New Recruitment Drive",
-    desc: "The Metropolitan Police have announced a new initiative aimed at increasing diversity across the force.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Metropolitan_Police_Traffic_Car.jpg",
-    content: `
-      <p>The Metropolitan Police Service has launched a citywide campaign to recruit new officers...</p>
-      <p>This initiative aims to bring in more community-focused recruits and enhance public safety.</p>
-    `,
+    id: "welcome",
+    img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+    title: "Welcome to SLFRP",
+    desc: "A new season, new departments, and a refreshed roster.",
+    body: `# Welcome to SLFRP
+
+We're excited to roll out a refreshed experience across our services.
+Stay tuned for events, patrol nights, and more.`,
   },
 ];

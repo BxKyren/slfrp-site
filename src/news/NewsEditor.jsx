@@ -1,67 +1,51 @@
 import React, { useState } from "react";
-import { newsData } from "./newsData.js";
+import { Container, GlassCard } from "../App.jsx";
+import { newsData as initialData } from "./newsData.js";
 
 export default function NewsEditor() {
-  const [news, setNews] = useState(newsData);
-  const [newItem, setNewItem] = useState({
+  const [news, setNews] = useState(initialData);
+  const [form, setForm] = useState({
+    id: "",
+    img: "",
     title: "",
     desc: "",
-    img: "",
-    content: "",
+    body: "",
   });
 
-  const handleChange = (e) => {
-    setNewItem({ ...newItem, [e.target.name]: e.target.value });
-  };
-
-  const handleAdd = () => {
-    if (!newItem.title || !newItem.img) return alert("Please fill all fields!");
-    const newNews = [...news, { ...newItem, id: news.length + 1 }];
-    setNews(newNews);
-    alert("✅ News item added (temporary - not saved to file)");
+  const addCard = (e) => {
+    e.preventDefault();
+    if (!form.id || !form.title) return;
+    setNews([{ ...form }, ...news]);
+    setForm({ id: "", img: "", title: "", desc: "", body: "" });
   };
 
   return (
-    <div className="max-w-2xl mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold mb-6 text-blue-900">
-        Add a News Article
-      </h2>
-      <div className="grid gap-4">
-        <input
-          name="title"
-          placeholder="Title"
-          value={newItem.title}
-          onChange={handleChange}
-          className="border rounded-lg p-3"
-        />
-        <input
-          name="desc"
-          placeholder="Short description"
-          value={newItem.desc}
-          onChange={handleChange}
-          className="border rounded-lg p-3"
-        />
-        <input
-          name="img"
-          placeholder="Image URL"
-          value={newItem.img}
-          onChange={handleChange}
-          className="border rounded-lg p-3"
-        />
-        <textarea
-          name="content"
-          placeholder="Full article HTML or text"
-          value={newItem.content}
-          onChange={handleChange}
-          className="border rounded-lg p-3 h-40"
-        />
-        <button
-          onClick={handleAdd}
-          className="bg-blue-600 text-white rounded-lg py-2 hover:bg-blue-700"
-        >
-          Add Article
-        </button>
-      </div>
-    </div>
+    <main className="bg-blue-50/40 min-h-screen py-12">
+      <Container>
+        <h1 className="text-3xl font-bold mb-6">News Editor</h1>
+        <GlassCard className="p-6 mb-10">
+          <form onSubmit={addCard} className="grid gap-4 md:grid-cols-2">
+            <input className="border rounded-xl px-3 py-2" placeholder="id (url-safe)" value={form.id} onChange={(e)=>setForm({...form, id:e.target.value})} />
+            <input className="border rounded-xl px-3 py-2" placeholder="image url" value={form.img} onChange={(e)=>setForm({...form, img:e.target.value})} />
+            <input className="border rounded-xl px-3 py-2 md:col-span-2" placeholder="title" value={form.title} onChange={(e)=>setForm({...form, title:e.target.value})} />
+            <input className="border rounded-xl px-3 py-2 md:col-span-2" placeholder="short description" value={form.desc} onChange={(e)=>setForm({...form, desc:e.target.value})} />
+            <textarea className="border rounded-xl px-3 py-2 md:col-span-2" rows="6" placeholder="article body (markdown or text)" value={form.body} onChange={(e)=>setForm({...form, body:e.target.value})} />
+            <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-4 py-2 md:col-span-2">Add card</button>
+          </form>
+        </GlassCard>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {news.map((n) => (
+            <GlassCard key={n.id}>
+              <img src={n.img} alt={n.title} className="w-full h-44 object-cover" />
+              <div className="p-4">
+                <h3 className="font-semibold">{n.title}</h3>
+                <p className="text-sm text-blue-700">{n.desc}</p>
+              </div>
+            </GlassCard>
+          ))}
+        </div>
+      </Container>
+    </main>
   );
 }
