@@ -17,6 +17,11 @@ import Police from "./services/Police.jsx";
 import Ambulance from "./services/Ambulance.jsx";
 import Fire from "./services/Fire.jsx";
 
+// ✅ News system
+import NewsList from "./news/NewsList.jsx";
+import NewsArticle from "./news/NewsArticle.jsx";
+import NewsEditor from "./news/NewsEditor.jsx";
+
 // --- Constants ---
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
 const USER_LOGO_URL =
@@ -316,53 +321,6 @@ function Services() {
   );
 }
 
-// --- Basic Pages ---
-function Team() {
-  return (
-    <PageWrapper>
-      <section className="py-20 bg-blue-50 text-blue-900 text-center">
-        <Container>
-          <h1 className="text-4xl font-bold mb-4 font-poppins">Our Team</h1>
-          <p className="text-blue-700 font-roboto">
-            Meet the dedicated members behind Serving London Frontline Roleplay.
-          </p>
-        </Container>
-      </section>
-    </PageWrapper>
-  );
-}
-
-function News() {
-  return (
-    <PageWrapper>
-      <section className="py-20 bg-blue-50 text-blue-900 text-center">
-        <Container>
-          <h1 className="text-4xl font-bold mb-4 font-poppins">News</h1>
-          <p className="text-blue-700 font-roboto">
-            Community Updates can be found here!
-          </p>
-        </Container>
-      </section>
-    </PageWrapper>
-  );
-}
-
-function About() {
-  return (
-    <PageWrapper>
-      <section className="py-20 bg-blue-50 text-blue-900 text-center">
-        <Container>
-          <h1 className="text-4xl font-bold mb-4 font-poppins">About SLFRP</h1>
-          <p className="text-blue-700 font-roboto">
-            A serious, immersive FiveM community inspired by London’s emergency
-            services.
-          </p>
-        </Container>
-      </section>
-    </PageWrapper>
-  );
-}
-
 // --- Footer ---
 function Footer() {
   return (
@@ -387,9 +345,10 @@ function AnimatedRoutes() {
         <Route path="/services/police" element={<Police />} />
         <Route path="/services/ambulance" element={<Ambulance />} />
         <Route path="/services/fire" element={<Fire />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/about" element={<About />} />
+        {/* 📰 News Routes */}
+        <Route path="/news" element={<NewsList />} />
+        <Route path="/news/:id" element={<NewsArticle />} />
+        <Route path="/news/editor" element={<NewsEditor />} />
       </Routes>
     </AnimatePresence>
   );
