@@ -9,7 +9,7 @@ export const teamData = {
     {
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPaUzYhPDy4kUyuyvHQbjOV-VVmv9CgNczlA&s",
       name: "BxRayven",
-      desc: "I am Ji.",
+      desc: "Community Founder of Serving London Frontline Roleplay.",
     },
     {
       img: "https://live.staticflickr.com/65535/54882468542_e77e522b7a_b.jpg",
