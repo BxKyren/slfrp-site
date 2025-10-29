@@ -79,8 +79,8 @@ export const teamData = {
       desc: "Developer working on FiveM scripts and performance improvements.",
     },
     {
-      img: "https://live.staticflickr.com/65535/54884972865_d863ff1816_b.jpg",
-      name: "Icypanic",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPaUzYhPDy4kUyuyvHQbjOV-VVmv9CgNczlA&s",
+      name: "BxRayven",
       desc: "Designer focusing on UI, community visuals, and in-game assets.",
     },
     {
