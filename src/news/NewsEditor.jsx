@@ -5,11 +5,11 @@ import { newsData as initialData } from "./newsData.js";
 export default function NewsEditor() {
   const [news, setNews] = useState(initialData);
   const [form, setForm] = useState({
-    id: "001",
-    img: "https://live.staticflickr.com/65535/54880830406_9d3a5e2065_b.jpg",
-    title: "Serving London Frontline Roleplay Website in Beta",
-    desc: "The website is currently in BETA mode. Please check out more information on this article!",
-    body: "donut_tv has been working extremely hard in making the website. But we still have quite a while! We are looking to also get a portal for you players. To navigate easily through patrols etc. Stay Tuned 👀",
+    id: "",
+    img: "",
+    title: "",
+    desc: "",
+    body: "",
   });
 
   const addCard = (e) => {
