@@ -12,7 +12,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import FadeIn from "./FadeIn.jsx";
 
 // Pages
-import Team from "./Team.jsx";
+import Team from "./team.jsx";
 import Police from "./services/Police.jsx";
 import Ambulance from "./services/Ambulance.jsx";
 import Fire from "./services/Fire.jsx";

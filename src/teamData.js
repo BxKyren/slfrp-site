@@ -7,14 +7,14 @@ export const teamData = {
       desc: "Hey, I’m Benj one of the Owners here at SLFRP. Catch me policing the streets and serving the public around London",
     },
     {
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPaUzYhPDy4kUyuyvHQbjOV-VVmv9CgNczlA&s",
+      name: "BxRayven",
+      desc: "I am Ji.",
+    },
+    {
       img: "https://live.staticflickr.com/65535/54882468542_e77e522b7a_b.jpg",
       name: "Jim",
       desc: "I am Jim.",
-    },
-    {
-      img: "http://live.staticflickr.com/65535/54884275228_3cede7efde_m.jpg",
-      name: "Kels",
-      desc: "Co-owner and the Designate Safeguarding Lead. Keeping SLFRP safe and protected.",
     },
   ],
 
@@ -85,7 +85,7 @@ export const teamData = {
     },
     {
       img: "https://live.staticflickr.com/65535/54884932204_dc6e3fa662_m.jpg",
-      name: "Donut",
+      name: "BxKyren",
       desc: "Maintains backend systems and server reliability.",
     },
   ],
