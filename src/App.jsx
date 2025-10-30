@@ -20,6 +20,14 @@ import NewsList from "./news/NewsList.jsx";
 import NewsArticle from "./news/NewsArticle.jsx";
 import NewsEditor from "./news/NewsEditor.jsx";
 
+// ✅ Police Division Subpages
+import RoadsTransport from "./services/police/RoadsTransport.jsx";
+import DogSupportUnit from "./services/police/DogSupportUnit.jsx";
+import SpecialOperations from "./services/police/SpecialOperations.jsx";
+import ContactCentre from "./services/police/ContactCentre.jsx";
+import Custody from "./services/police/Custody.jsx";
+import Marine from "./services/police/Marine.jsx";
+
 // Constants
 const DISCORD_INVITE = "https://discord.gg/H97wbtuX";
 export const USER_LOGO_URL =
@@ -39,7 +47,7 @@ export const Button = ({ as: Tag = "a", href, to, onClick, children }) => (
     href={href}
     to={to}
     onClick={onClick}
-    className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-poppins font-semibold tracking-wide transition shadow-sm ring-1 ring-blue-200 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 bg-blue-600 text-white"
+    className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-poppins font-semibold tracking-wide transition bg-blue-600 text-white hover:bg-blue-700"
   >
     {children}
   </Tag>
@@ -47,7 +55,7 @@ export const Button = ({ as: Tag = "a", href, to, onClick, children }) => (
 
 export const GlassCard = ({ children, className = "" }) => (
   <div
-    className={`rounded-2xl overflow-hidden shadow-sm border border-blue-100/60 bg-white/70 backdrop-blur-md transition transform hover:shadow-lg hover:-translate-y-1 ${className}`}
+    className={`rounded-2xl overflow-hidden shadow-md border border-blue-100 bg-white/70 backdrop-blur transform transition hover:shadow-lg hover:-translate-y-1 ${className}`}
   >
     {children}
   </div>
@@ -64,14 +72,16 @@ function NavBar() {
   ];
 
   return (
-    <header className="sticky top-0 border-b border-blue-100/60 bg-white/75 backdrop-blur-lg z-50">
+    <header className="sticky top-0 border-b border-blue-100 bg-white/80 backdrop-blur-lg z-50">
       <Container>
         <div className="flex items-center justify-between py-3">
           <NavLink to="/" className="flex items-center gap-3">
             <img src={USER_LOGO_URL} className="h-10 w-10 rounded-xl" />
             <div className="text-blue-800 font-black leading-tight">
-              <div>Serving London Frontline Roleplay</div>
-              <div className="text-xs">Realistic Public Roleplay Community</div>
+              Serving London Frontline Roleplay
+              <div className="text-xs text-blue-600">
+                Realistic Public Roleplay Community
+              </div>
             </div>
           </NavLink>
 
@@ -126,29 +136,28 @@ function ScrollToTop() {
   return null;
 }
 
-/* ✅ Full Animated Splash */
+/* ✅ Splash Screen */
 function SplashScreen({ onFinish }) {
   useEffect(() => {
-    const timer = setTimeout(onFinish, 1100);
+    const timer = setTimeout(onFinish, 1200);
     return () => clearTimeout(timer);
   }, [onFinish]);
 
   return (
     <motion.div className="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999]">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-50 blur-md"
+        className="absolute inset-0 bg-cover bg-center opacity-50 blur-sm"
         style={{ backgroundImage: `url(${USER_BANNER_URL})` }}
       />
       <motion.img
         src={USER_LOGO_URL}
-        className="relative z-10 w-28 h-28 rounded-xl shadow-lg ring-2 ring-blue-500/50"
-        animate={{ scale: [1, 1.06, 1], opacity: [0.8, 1, 0.8] }}
-        transition={{ duration: 1.6, repeat: Infinity }}
+        className="relative z-10 w-28 h-28 rounded-xl shadow-lg"
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 1.4, repeat: Infinity }}
       />
       <motion.h1
         className="absolute bottom-16 text-white text-xl font-bold"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: [0, 1] }}
         transition={{ delay: 0.4 }}
       >
         Serving London Frontline Roleplay
@@ -157,27 +166,26 @@ function SplashScreen({ onFinish }) {
   );
 }
 
-/* ✅ Home Page — original styling preserved */
+/* ✅ Home */
 function Home() {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 400], [0, 120]);
-
+  const y = useTransform(scrollY, [0, 400], [0, 100]);
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div>
       <section className="relative overflow-hidden">
         <motion.div
           style={{ y, backgroundImage: `url(${USER_BANNER_URL})` }}
           className="absolute inset-0 bg-cover blur-sm scale-105 -z-10"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-800/40 to-white/70 -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-700/50 to-white/60 -z-10" />
 
         <Container>
-          <div className="py-20 max-w-2xl text-white drop-shadow-xl">
-            <h1 className="text-5xl font-extrabold mb-4 font-[BBH Sans Bartle]">
+          <div className="py-20 max-w-2xl text-white">
+            <h1 className="text-5xl font-bold mb-4">
               Serving London <span className="text-blue-300">Frontline Roleplay</span>
             </h1>
-            <p className="text-lg mb-6 opacity-90">
-              Join our realistic FiveM community inspired by London emergency services.
+            <p className="text-lg opacity-90 mb-6">
+              Join our realistic FiveM community inspired by London’s emergency services.
             </p>
             <Button href={DISCORD_INVITE}>Join Discord</Button>
           </div>
@@ -187,7 +195,7 @@ function Home() {
   );
 }
 
-/* ✅ Services Page — NOW MATCHES TEAM UI */
+/* ✅ Services Page */
 function Services() {
   const services = [
     {
@@ -198,45 +206,32 @@ function Services() {
     },
     {
       title: "London Ambulance Service",
-      desc: "Emergency medical response across London.",
+      desc: "Saving lives across London.",
       img: "https://live.staticflickr.com/65535/54881220125_63bb692836_b.jpg",
       link: "/services/ambulance",
     },
     {
       title: "London Fire Brigade",
-      desc: "Fire & rescue excellence.",
+      desc: "Rescue excellence.",
       img: "https://live.staticflickr.com/65535/54882169677_b2ee358218_b.jpg",
       link: "/services/fire",
     },
   ];
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <section className="relative h-[350px] flex items-center justify-center text-center">
-        <motion.div
-          className="absolute inset-0 bg-cover bg-center -z-10 blur-sm scale-105"
-          style={{ backgroundImage: `url(${USER_BANNER_URL})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/90 via-blue-800/50 to-white/70 -z-10" />
-        <h1 className="text-white text-5xl font-extrabold drop-shadow-lg font-[BBH Sans Bartle]">
-          Our Services
-        </h1>
-      </section>
-
-      <main className="py-16 bg-blue-50/50 text-blue-900">
+    <motion.div>
+      <main className="py-16 bg-blue-50/40 text-blue-900">
         <Container>
-          <p className="text-center mb-10 text-lg opacity-75">
-            Explore London’s frontline emergency departments.
-          </p>
+          <h2 className="text-center text-3xl font-bold mb-10">Emergency Services</h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s, i) => (
-              <FadeIn key={i} delay={i * 0.12}>
+              <FadeIn key={s.title} delay={i * 0.1}>
                 <Link to={s.link}>
-                  <GlassCard className="cursor-pointer">
-                    <img src={s.img} className="w-full h-48 object-cover" />
+                  <GlassCard>
+                    <img src={s.img} className="w-full h-44 object-cover" />
                     <div className="p-5">
-                      <h2 className="font-bold text-xl">{s.title}</h2>
+                      <h2 className="font-bold text-xl mb-1">{s.title}</h2>
                       <p className="text-sm opacity-80">{s.desc}</p>
                     </div>
                   </GlassCard>
@@ -253,24 +248,34 @@ function Services() {
 /* ✅ Footer */
 function Footer() {
   return (
-    <footer className="text-center py-8 text-blue-700 bg-white border-t border-blue-100">
+    <footer className="text-center py-10 text-blue-700 bg-white border-t border-blue-100">
       © {new Date().getFullYear()} Serving London Frontline Roleplay
     </footer>
   );
 }
 
-/* ✅ Router Setup */
+/* ✅ Route Manager */
 function AnimatedRoutes() {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+      <Routes key={location.pathname} location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/team" element={<Team />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/police" element={<Police />} />
         <Route path="/services/ambulance" element={<Ambulance />} />
         <Route path="/services/fire" element={<Fire />} />
+
+        {/* ✅ Police Sub-Routes */}
+        <Route path="/services/police/rtpc" element={<RoadsTransport />} />
+        <Route path="/services/police/dsu" element={<DogSupportUnit />} />
+        <Route path="/services/police/special-ops" element={<SpecialOperations />} />
+        <Route path="/services/police/contact-centre" element={<ContactCentre />} />
+        <Route path="/services/police/custody" element={<Custody />} />
+        <Route path="/services/police/marine" element={<Marine />} />
+
+        {/* ✅ News */}
         <Route path="/news" element={<NewsList />} />
         <Route path="/news/:id" element={<NewsArticle />} />
         <Route path="/news/editor" element={<NewsEditor />} />
@@ -282,7 +287,6 @@ function AnimatedRoutes() {
 /* ✅ App Root */
 export default function App() {
   const [loading, setLoading] = useState(true);
-
   return (
     <BrowserRouter>
       <AnimatePresence mode="wait">
@@ -299,4 +303,4 @@ export default function App() {
       </AnimatePresence>
     </BrowserRouter>
   );
-} 
+}

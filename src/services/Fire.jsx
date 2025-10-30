@@ -14,12 +14,14 @@ export default function Fire() {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       className="relative overflow-hidden bg-red-50/40 text-red-900 min-h-screen"
     >
+      {/* ✅ Background */}
       <div
         className="absolute inset-0 bg-cover bg-center blur-sm opacity-40 -z-10"
         style={{ backgroundImage: "url(https://i.imgur.com/6MJ6k8E.jpeg)" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-red-900/70 via-red-800/50 to-white/70 -z-10" />
 
+      {/* ✅ Hero Section */}
       <Container>
         <Link
           to="/services"
@@ -33,8 +35,8 @@ export default function Fire() {
         </h1>
 
         <p className="font-roboto text-lg text-red-100 max-w-3xl leading-relaxed mb-8">
-          Fire suppression, rescue operations and major incident response across the capital.
-          Train and operate with a clear chain of command and modern equipment.
+          Fire suppression, life-saving rescue operations and major incident response
+          across London. Train and operate as a high-performing emergency crew.
         </p>
 
         <motion.img
@@ -47,6 +49,7 @@ export default function Fire() {
         />
       </Container>
 
+      {/* ✅ Divisions Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
